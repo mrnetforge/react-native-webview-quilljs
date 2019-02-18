@@ -7,22 +7,21 @@ export default class App extends React.Component {
 
 
   webViewQuillEditor;
-
+  contentToDisplay = [
+    { text: 'Hello' },
+    { text: 'World', bold: true }
+  ];
   onLoadCallback = () => {
 
   };
 
 
   render() {
-    const contentToDisplay = '';
     return (
       <View style={styles.container}>
         <Text>Editor Test</Text>
         <WebViewQuillEditor
             ref={component => (this.webViewQuillEditor = component)}
-            getDeltaCallback={this.getDeltaCallback}
-            contentToDisplay={contentToDisplay}
-            onLoad={this.onLoadCallback}
           />
       </View>
     );
